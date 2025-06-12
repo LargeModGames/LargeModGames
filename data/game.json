@@ -15,16 +15,19 @@
   ],
   "direction": "up",
   "food": [
-    5,
-    0
+    6,
+    7
   ],
   "scores": {
     "testuser": 5.5,
-    "LargeModGames": 1.1
+    "LargeModGames": 2.2
   },
   "turn": 0,
-  "lastMoveAt": "2025-06-12T10:09:34Z",
-  "lastFedBy": null,  "moveCooldown": {},
+  "lastMoveAt": "2025-06-12T10:10:44Z",
+  "lastFedBy": null,
+  "moveCooldown": {
+    "LargeModGames": 1749723498476
+  },
   "meta": {
     "hasWalls": true,
     "hasBoss": false
