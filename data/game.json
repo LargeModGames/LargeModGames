@@ -1,7 +1,14 @@
 {
-  "snake": [[5,5]],
+  "snake": [[5,4],[5,5],[5,6]],
   "direction": "up",
   "food": [2,3],
-  "scores": {},
-  "turn": 0
+  "scores": {"testuser": 5.5},
+  "turn": 0,
+  "lastMoveAt": "2025-06-12T08:00:00Z",
+  "lastFedBy": null,
+  "moveCooldown": {},
+  "meta": {
+    "hasWalls": true,
+    "hasBoss": false
+  }
 }

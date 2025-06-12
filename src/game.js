@@ -51,7 +51,7 @@ export function move(state, dir, username) {
     state.scores[username] += Math.floor(L / 2);
     // reset snake to center length 3
     state.snake = [[5,4],[5,5],[5,6]];
-    state.food = spawnFood(state.snake, w, h);
+    state.food = spawnFood(state);
   } else {
     state.snake.push(newHead);
     // Check food collision
@@ -60,7 +60,7 @@ export function move(state, dir, username) {
       state.scores[username] += 1;
       if (state.lastFedBy === username) state.scores[username] += 1;
       state.lastFedBy = username;
-      state.food = spawnFood(state.snake, w, h);
+      state.food = spawnFood(state);
     } else {
       state.snake.shift();
     }
@@ -68,38 +68,21 @@ export function move(state, dir, username) {
   return { state, didEat, didDie };
 }
 
-// TODO: helper to choose a random food location not on the snake
-function spawnFood(snake, width, height) {
-  // TODO: implement random spawn on empty cell
-  return [Math.floor(width/2), Math.floor(height/2)];
-}
-
 /**
- * Moves the snake based on the current game state and a direction.
- * @param {Object} gameState
- * @param {string} direction
- * @returns {Object} new game state
+ * Spawns food in a random empty cell on an 11×11 board.
+ * @param {Object} state
+ * @returns {[number,number]}
  */
-export function move(gameState, direction) {
-  // TODO: implement snake move logic
-  throw new Error("move() not implemented");
-}
-
-/**
- * Calculates the current score based on game state.
- * @param {Object} gameState
- * @returns {number}
- */
-export function score(gameState) {
-  // TODO: calculate score
-  throw new Error("score() not implemented");
-}
-
-/**
- * Resets the game to its initial state.
- * @returns {Object} initial game state
- */
-export function reset() {
-  // TODO: reset game state
-  throw new Error("reset() not implemented");
+export function spawnFood(state) {
+  const occupied = new Set(state.snake.map(pos => `${pos[0]},${pos[1]}`));
+  const empties = [];
+  for (let x = 0; x < 11; x++) {
+    for (let y = 0; y < 11; y++) {
+      const key = `${x},${y}`;
+      if (!occupied.has(key)) empties.push([x, y]);
+    }
+  }  // TODO: ensure empties.length > 0
+  const choice = empties[Math.floor(Math.random() * empties.length)];
+  state.food = choice;
+  return choice;
 }
