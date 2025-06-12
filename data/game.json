@@ -1,27 +1,31 @@
 {
   "snake": [
     [
-      7,
-      7
-    ],
-    [
       8,
       7
     ],
     [
       8,
       6
+    ],
+    [
+      8,
+      5
     ]
   ],
   "direction": "up",
   "food": [
     8,
     2
-  ],  "scores": {
+  ],
+  "scores": {
+    "LargeModGames": 1
   },
   "turn": 0,
-  "lastMoveAt": "2025-06-12T11:20:38Z",
-  "lastFedBy": null,  "moveCooldown": {
+  "lastMoveAt": "2025-06-12T11:44:28Z",
+  "lastFedBy": null,
+  "moveCooldown": {
+    "LargeModGames": 1749728680726
   },
   "meta": {
     "unlockedStarGates": []

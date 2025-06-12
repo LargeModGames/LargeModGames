@@ -3,7 +3,7 @@
 A turn-based Snake game that lives in this GitHub README! Comment `/move U/D/L/R` on [Issue #1](../../issues/1) to play.
 
 <!-- SNAKE-BOARD-START -->
-<img src="snake-board-1749727250426.png?raw=true" alt="Snake Board">
+<img src="snake-board-1749728680727.png?raw=true" alt="Snake Board">
 
 LargeModGames moved U.
 <!-- SNAKE-BOARD-END -->
@@ -36,11 +36,10 @@ Help unlock special features by starring this repository!
 
 ## Leaderboard
 
-| Rank | Player | Score | Status |
-|------|--------|-------|--------|
-| 🥇 1 | LargeModGames | 6.6 | ⏳ 30s |
-| 🥈 2 | testuser | 5.5 | 🟢 Ready |
+| Rank | Player | Score | Last Activity |
+|------|--------|-------|---------------|
+| 🥇 1 | LargeModGames | 1 | Just played! |
 
-📊 **Game Stats**: 2 players • 121 total moves • Snake length: 3
+📊 **Game Stats**: 1 players • 1 total points • Snake length: 3
 🎯 **Current Goal**: Reach the food at position (8, 2)
 🌟 **Star this repo to unlock special features!** (See milestones above)
