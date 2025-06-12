@@ -1,7 +1,15 @@
 {
   "name": "snake-arcade",
   "version": "1.0.0",
+  "description": "A turn-based Snake game that lives in a GitHub README with community gameplay",
   "type": "module",
+  "license": "MIT",
+  "author": "LargeModGames",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LargeModGames/LargeModGames.git"
+  },
+  "keywords": ["game", "snake", "github", "automation", "community", "interactive"],
   "scripts": {
     "start": "node .github/run.mjs",
     "lint": "echo \"No lint configured yet\""
