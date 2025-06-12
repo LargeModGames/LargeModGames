@@ -28,12 +28,26 @@ export function render(state) {
     ctx.lineWidth = 2;
     ctx.strokeRect(0, 0, WIDTH, WIDTH);
   }
-
-  // draw snake
+  // draw snake body
   ctx.fillStyle = '#39ff14';
-  state.snake.forEach(([x, y]) => {
+  state.snake.slice(0, -1).forEach(([x, y]) => {
     ctx.fillRect(x * CELL_SIZE, y * CELL_SIZE, CELL_SIZE, CELL_SIZE);
   });
+
+  // draw snake head (brighter/different color)
+  if (state.snake.length > 0) {
+    const [headX, headY] = state.snake[state.snake.length - 1];
+    ctx.fillStyle = '#7fff00'; // brighter green for head
+    ctx.fillRect(headX * CELL_SIZE, headY * CELL_SIZE, CELL_SIZE, CELL_SIZE);
+    
+    // add a small dot in the center of the head for extra clarity
+    ctx.fillStyle = '#ffffff';
+    const centerX = headX * CELL_SIZE + CELL_SIZE / 2;
+    const centerY = headY * CELL_SIZE + CELL_SIZE / 2;
+    ctx.beginPath();
+    ctx.arc(centerX, centerY, 2, 0, 2 * Math.PI);
+    ctx.fill();
+  }
 
   // draw food
   const [fx, fy] = state.food;
