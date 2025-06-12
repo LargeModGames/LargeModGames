@@ -2,14 +2,14 @@
   "snake": [
     [
       6,
-      6
-    ],
-    [
-      6,
       7
     ],
     [
       6,
+      8
+    ],
+    [
+      5,
       8
     ]
   ],
@@ -20,13 +20,13 @@
   ],
   "scores": {
     "testuser": 5.5,
-    "LargeModGames": 4.799999999999999
+    "LargeModGames": 4.899999999999999
   },
   "turn": 0,
-  "lastMoveAt": "2025-06-12T10:40:31Z",
+  "lastMoveAt": "2025-06-12T10:44:34Z",
   "lastFedBy": null,
   "moveCooldown": {
-    "LargeModGames": 1749724841953
+    "LargeModGames": 1749725085551
   },
   "meta": {
     "hasWalls": true,
