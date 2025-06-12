@@ -10,15 +10,15 @@
 
 <!-- SNAKE-BOARD-START -->
 <p align="center">
-  <img src="snake-board-1749735366303.png?raw=true" width="176" alt="Snake game board"/>
+  <img src="snake-board-1749735427306.png?raw=true" width="176" alt="Snake game board"/>
 </p>
 <p align="center">
   🕹️ <strong>Play:</strong> comment <code>/move U D L R</code> on <a href="../../issues/1">Issue #1</a><br>
   ⭐ Next unlock: 100 ★ (Speed Boost) · 250 ★ (Power Pellets) · 500 ★ (Boss Mode)<br>
-  🏆 Top players: @LargeModGames 2 • @Koen36 1
+  🏆 Top players: @Koen36 5 • @LargeModGames 2
 </p>
 
-Koen36 moved U.
+Koen36 ate food!
 <!-- SNAKE-BOARD-END -->
 
 ## How to Play
@@ -51,9 +51,9 @@ Help unlock special features by starring this repository!
 
 | Rank | Player | Score | Last Activity |
 |------|--------|-------|---------------|
-| 🥇 1 | LargeModGames | 2 | 1h ago |
-| 🥈 2 | Koen36 | 1 | Just played! |
+| 🥇 1 | **Koen36** 🐍 | 5 | Just played! |
+| 🥈 2 | LargeModGames | 2 | 1h ago |
 
-📊 **Game Stats**: 2 players • 3 total points • Snake length: 3
-🎯 **Current Goal**: Reach the food at position (8, 2)
+📊 **Game Stats**: 2 players • 7 total points • Snake length: 4
+🎯 **Current Goal**: Reach the food at position (2, 5)
 🌟 **Star this repo to unlock special features!** (See milestones above)

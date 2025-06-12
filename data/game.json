@@ -11,23 +11,27 @@
     [
       8,
       3
+    ],
+    [
+      8,
+      2
     ]
   ],
   "direction": "up",
   "food": [
-    8,
-    2
+    2,
+    5
   ],
   "scores": {
     "LargeModGames": 2,
-    "Koen36": 1
+    "Koen36": 5
   },
   "turn": 0,
-  "lastMoveAt": "2025-06-12T13:35:55Z",
-  "lastFedBy": null,
+  "lastMoveAt": "2025-06-12T13:36:52Z",
+  "lastFedBy": "Koen36",
   "moveCooldown": {
     "LargeModGames": 1749730049552,
-    "Koen36": 1749735344705
+    "Koen36": 1749735427305
   },
   "meta": {
     "unlockedStarGates": []
