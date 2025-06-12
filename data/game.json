@@ -1,0 +1,7 @@
+{
+  "snake": [[5,5]],
+  "direction": "up",
+  "food": [2,3],
+  "scores": {},
+  "turn": 0
+}

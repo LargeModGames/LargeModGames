@@ -1,0 +1,13 @@
+{
+  "name": "snake-arcade",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node .github/run.mjs",
+    "lint": "echo \"No lint configured yet\""
+  },
+  "dependencies": {
+    "@napi-rs/canvas": "^0.1.31",
+    "@octokit/rest": "^19.0.7"
+  }
+}
