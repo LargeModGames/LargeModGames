@@ -2,15 +2,15 @@
   "snake": [
     [
       8,
-      6
-    ],
-    [
-      8,
       5
     ],
     [
       8,
       4
+    ],
+    [
+      8,
+      3
     ]
   ],
   "direction": "up",
@@ -19,13 +19,15 @@
     2
   ],
   "scores": {
-    "LargeModGames": 2
+    "LargeModGames": 2,
+    "Koen36": 1
   },
   "turn": 0,
-  "lastMoveAt": "2025-06-12T12:07:19Z",
+  "lastMoveAt": "2025-06-12T13:35:29Z",
   "lastFedBy": null,
   "moveCooldown": {
-    "LargeModGames": 1749730049552
+    "LargeModGames": 1749730049552,
+    "Koen36": 1749735344705
   },
   "meta": {
     "unlockedStarGates": []
