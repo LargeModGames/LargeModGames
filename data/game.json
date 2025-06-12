@@ -1,12 +1,33 @@
 {
-  "snake": [[5,4],[5,5],[5,6]],
+  "snake": [
+    [
+      5,
+      4
+    ],
+    [
+      5,
+      5
+    ],
+    [
+      5,
+      6
+    ]
+  ],
   "direction": "up",
-  "food": [2,3],
-  "scores": {"testuser": 5.5},
+  "food": [
+    5,
+    0
+  ],
+  "scores": {
+    "testuser": 5.5,
+    "LargeModGames": 1.1
+  },
   "turn": 0,
-  "lastMoveAt": "2025-06-12T08:00:00Z",
+  "lastMoveAt": "2025-06-12T10:09:34Z",
   "lastFedBy": null,
-  "moveCooldown": {},
+  "moveCooldown": {
+    "LargeModGames": 1749722985946
+  },
   "meta": {
     "hasWalls": true,
     "hasBoss": false
