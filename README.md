@@ -16,6 +16,8 @@ LargeModGames moved D.
 4. Eat food to grow and increase your score!
 5. Avoid walls and your own body
 
+⏰ **Note:** Each player has a 30-second cooldown between moves to keep the game fair and fun!
+
 **🟢 Green squares** = Snake body  
 **🔵 Blue square** = Snake head (front) - this is the part that moves!  
 **🔴 Red square** = Food

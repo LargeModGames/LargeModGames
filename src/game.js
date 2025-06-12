@@ -29,13 +29,12 @@ export function saveState(state, filePath = path.resolve("data/game.json")) {
  */
 export function move(state, dir, username) {
   if (!DIRS[dir]) return { state, didEat: false, didDie: false, deathReason: null };
-  const now = Date.now();
-  state.moveCooldown = state.moveCooldown || {};
+  const now = Date.now();  state.moveCooldown = state.moveCooldown || {};
   if (
     state.moveCooldown[username] &&
-    now - state.moveCooldown[username] < 60000
+    now - state.moveCooldown[username] < 30000
   ) {
-    // 1 minute cooldown
+    // 30 second cooldown per player
     return { state, didEat: false, didDie: false, deathReason: null };
   }
   state.moveCooldown[username] = now;
