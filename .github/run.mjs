@@ -35,27 +35,34 @@ async function main() {
   if (newerMoves.length === 0) {
     console.log("No new moves found. Exiting.");
     return;
+  }  // Process ALL new moves in chronological order
+  let currentState = state;
+  let lastTimestamp = state.lastMoveAt;
+  let totalLogMessage = '';
+  
+  for (const { username, dir, timestamp } of newerMoves) {
+    console.log(`Processing move: ${username} -> ${dir} at ${timestamp}`);
+    
+    const { state: newState, didEat, didDie } = move(currentState, dir, username);
+    currentState = newState;
+    lastTimestamp = timestamp;
+    
+    let moveLog = '';
+    if (didEat) moveLog += `${username} ate food! `;
+    if (didDie) moveLog += `${username} died! `;
+    if (!didEat && !didDie) moveLog += `${username} moved ${dir}. `;
+    
+    totalLogMessage += moveLog;
+    console.log("Move result:", { didEat, didDie });
   }
-
-  const { username, dir, timestamp } = newerMoves[0];
-  console.log(`Processing move: ${username} -> ${dir} at ${timestamp}`);
-
-  const { state: newState, didEat, didDie } = move(state, dir, username);
-  newState.lastMoveAt = timestamp;
-  console.log("Move result:", { didEat, didDie });
-  console.log("New state:", JSON.stringify(newState, null, 2));
-
-  let logMessage = "";
-  if (didEat) logMessage += `${username} ate food! `;
-  if (didDie) logMessage += `${username} died! `;
-  logMessage = logMessage || `${username} moved ${dir}`;
-
-  saveState(newState, dataFile);
+  
+  currentState.lastMoveAt = lastTimestamp;  saveState(currentState, dataFile);
   console.log("State saved.");
+
   // render and save image (use consistent filename)
   const outFile = "snake-board.png";
   console.log("Rendering board to:", outFile);
-  const buffer = render(newState);
+  const buffer = render(currentState);
   fs.writeFileSync(path.resolve(process.cwd(), outFile), buffer);
   console.log("Board image generated.");
 
@@ -63,7 +70,7 @@ async function main() {
   console.log("Updating README...");
   let readme = fs.readFileSync(readmeFile, "utf-8");
   const imgTag = `<img src="${outFile}?raw=true&t=${Date.now()}" alt="Snake Board">`;
-  const status = logMessage;
+  const status = totalLogMessage.trim() || 'Awaiting next move...';
   const replacement = `<!-- SNAKE-BOARD-START -->\n${imgTag}\n\n${status}\n<!-- SNAKE-BOARD-END -->`;
   readme = readme.replace(
     /<!-- SNAKE-BOARD-START -->[\s\S]*<!-- SNAKE-BOARD-END -->/,
@@ -78,14 +85,13 @@ async function main() {
     execSync(`git add ${outFile} ${readmeFile} data/game.json`, {
       stdio: "inherit",
     });
-    execSync(`git commit -m "chore: update board - ${logMessage}"`, {
+    execSync(`git commit -m "chore: update board - ${status}"`, {
       stdio: "inherit",
     });
     execSync(`git push`, { stdio: "inherit" });
     console.log("Changes pushed successfully.");
   } catch (error) {
-    console.error("Error during git operations:", error.message);
-    throw error;
+    console.error("Error during git operations:", error.message);    throw error;
   }
 }
 
