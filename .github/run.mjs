@@ -5,6 +5,77 @@ import { loadState, saveState, move } from "../src/game.js";
 import { render } from "../src/renderer.js";
 import { getNewMoves } from "../src/github.js";
 import { execSync } from "child_process";
+import { Octokit } from '@octokit/rest';
+
+// Initialize Octokit for star gates and error reporting
+const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
+const [owner, repo] = process.env.GITHUB_REPOSITORY.split('/');
+
+// TODO: Helper function to post error comments to Issue #1
+async function postErrorComment(error) {
+  try {
+    await octokit.rest.issues.createComment({
+      owner,
+      repo,
+      issue_number: 1,
+      body: `🐛 **Game Error**: ${error.message}\n\n\`\`\`\n${error.stack}\n\`\`\``
+    });
+    console.log("Error comment posted to Issue #1");
+  } catch (commentError) {
+    console.error("Failed to post error comment:", commentError.message);
+  }
+}
+
+// TODO: Helper function to check and unlock star gates
+async function checkStarGates(state) {
+  let hasNewUnlocks = false;
+  let starComments = [];
+  
+  try {
+    const { data: repo } = await octokit.rest.repos.get({ owner, repo });
+    const starCount = repo.stargazers_count;
+    console.log(`Current star count: ${starCount}`);
+    
+    // Initialize meta if it doesn't exist
+    if (!state.meta) {
+      state.meta = { unlockedStarGates: [] };
+    }
+    if (!state.meta.unlockedStarGates) {
+      state.meta.unlockedStarGates = [];
+    }
+    
+    const starGates = [
+      { threshold: 100, feature: "Speed Boost", message: "🌟 **100 Stars Unlocked!** The snake can now move faster!" },
+      { threshold: 250, feature: "Power Pellets", message: "⭐ **250 Stars Unlocked!** Special power pellets now appear!" },
+      { threshold: 500, feature: "Boss Mode", message: "✨ **500 Stars Unlocked!** Boss battles are now enabled!" }
+    ];
+    
+    for (const gate of starGates) {
+      if (starCount >= gate.threshold && !state.meta.unlockedStarGates.includes(gate.threshold)) {
+        state.meta.unlockedStarGates.push(gate.threshold);
+        starComments.push(gate.message);
+        hasNewUnlocks = true;
+        console.log(`Star gate unlocked: ${gate.threshold} stars - ${gate.feature}`);
+      }
+    }
+    
+    // Post star gate comments to Issue #1
+    for (const comment of starComments) {
+      await octokit.rest.issues.createComment({
+        owner,
+        repo,
+        issue_number: 1,
+        body: comment
+      });
+      console.log("Star gate comment posted");
+    }
+    
+  } catch (error) {
+    console.error("Error checking star gates:", error.message);
+  }
+  
+  return hasNewUnlocks;
+}
 
 async function main() {
   console.log("=== Snake Arcade Runner Started ===");
@@ -21,6 +92,10 @@ async function main() {
   state.lastMoveAt = state.lastMoveAt || new Date(0).toISOString();
   console.log("Current state:", JSON.stringify(state, null, 2));
   console.log("Looking for moves since:", state.lastMoveAt);
+  
+  // Check star gates first
+  const hasStarUpdates = await checkStarGates(state);
+  
   // fetch new moves
   console.log("Fetching new moves...");
   const moves = await getNewMoves(state.lastMoveAt);
@@ -32,23 +107,28 @@ async function main() {
   );
   console.log("Newer moves:", newerMoves);
 
-  if (newerMoves.length === 0) {
-    console.log("No new moves found. Exiting.");
+  if (newerMoves.length === 0 && !hasStarUpdates) {
+    console.log("No new moves or star updates found. Exiting.");
     return;
-  } // Process ALL new moves in chronological order
+  } 
+  
+  // Process ALL new moves in chronological order
   let currentState = state;
   let lastTimestamp = state.lastMoveAt;
   let totalLogMessage = "";
-
   for (const { username, dir, timestamp } of newerMoves) {
-    console.log(`Processing move: ${username} -> ${dir} at ${timestamp}`);    const {
+    console.log(`Processing move: ${username} -> ${dir} at ${timestamp}`);
+    
+    const {
       state: newState,
       didEat,
       didDie,
       deathReason,
     } = move(currentState, dir, username);
     currentState = newState;
-    lastTimestamp = timestamp;    let moveLog = "";
+    lastTimestamp = timestamp;
+
+    let moveLog = "";
     if (didEat) moveLog += `${username} ate food! `;
     if (didDie) {
       if (deathReason === 'wall') {
@@ -65,9 +145,15 @@ async function main() {
     console.log("Move result:", { didEat, didDie, deathReason });
   }
 
-  currentState.lastMoveAt = lastTimestamp;
+  // Update timestamp only if we processed moves
+  if (newerMoves.length > 0) {
+    currentState.lastMoveAt = lastTimestamp;
+  }
+  
+  // Save state (includes star gate updates and/or move updates)
   saveState(currentState, dataFile);
   console.log("State saved.");
+  
   // render and save image (use timestamped filename to avoid all caching)
   const outFile = `snake-board-${Date.now()}.png`;
   console.log("Rendering board to:", outFile);
@@ -87,7 +173,8 @@ async function main() {
   );
   fs.writeFileSync(readmeFile, readme);
   console.log("README updated.");
-  // commit and push changes
+  
+  // commit and push changes (only once at the end)
   console.log("Committing changes...");
   try {
     // Remove old board files to keep repo clean
@@ -95,7 +182,17 @@ async function main() {
     execSync(`git add ${outFile} ${readmeFile} data/game.json`, {
       stdio: "inherit",
     });
-    execSync(`git commit -m "chore: update board - ${status}"`, {
+    
+    let commitMessage = "chore: update board";
+    if (hasStarUpdates && totalLogMessage.trim()) {
+      commitMessage += ` - star gates + ${status}`;
+    } else if (hasStarUpdates) {
+      commitMessage += " - star gate unlocks";
+    } else if (totalLogMessage.trim()) {
+      commitMessage += ` - ${status}`;
+    }
+    
+    execSync(`git commit -m "${commitMessage}"`, {
       stdio: "inherit",
     });
     execSync(`git push`, { stdio: "inherit" });
@@ -106,7 +203,14 @@ async function main() {
   }
 }
 
-main().catch((err) => {
-  console.error(err);
+// Wrap main() in try/catch for error handling
+main().catch(async (error) => {
+  console.error("=== Game Error ===");
+  console.error(error);
+  
+  // Post error comment to Issue #1
+  await postErrorComment(error);
+  
+  // Exit with error code
   process.exit(1);
 });
