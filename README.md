@@ -22,6 +22,18 @@ LargeModGames moved R.
 **🔵 Blue square** = Snake head (front) - this is the part that moves!  
 **🔴 Red square** = Food
 
+## ⭐ Star Milestones
+
+Help unlock special features by starring this repository!
+
+| Stars | Feature | Description |
+|-------|---------|-------------|
+| 🌟 **100** | Speed Boost | The snake moves faster and more responsively |
+| ⭐ **250** | Power Pellets | Special power-up food appears with bonus effects |
+| ✨ **500** | Boss Mode | Epic boss battles and challenging obstacles |
+
+**Current Progress**: ⭐ 0 / 100 stars *(Check back for updates!)*
+
 ## Leaderboard
 
 Top players will be shown on the game board.

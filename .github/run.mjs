@@ -128,18 +128,18 @@ function generateLeaderboard(state) {
   
   leaderboard += "\n";
   leaderboard += `📊 **Game Stats**: ${totalPlayers} players • ${totalMoves} total moves • Snake length: ${snakeLength}\n`;
-  leaderboard += `🎯 **Current Goal**: Reach the food at position (${state.food ? state.food.join(', ') : 'unknown'})\n`;
-  
-  // Add achievement info if star gates are unlocked
-  if (state.meta) {
+  leaderboard += `🎯 **Current Goal**: Reach the food at position (${state.food ? state.food.join(', ') : 'unknown'})\n`;    // Add achievement info if star gates are unlocked
+  if (state.meta && state.meta.unlockedStarGates && state.meta.unlockedStarGates.length > 0) {
     const achievements = [];
-    if (state.meta.hasWalls) achievements.push("🧱 Walls");
-    if (state.meta.hasGolden) achievements.push("✨ Golden Apple");
-    if (state.meta.hasBoss) achievements.push("🔥 Boss Mode");
+    if (state.meta.unlockedStarGates.includes(100)) achievements.push("🌟 Speed Boost");
+    if (state.meta.unlockedStarGates.includes(250)) achievements.push("⭐ Power Pellets");
+    if (state.meta.unlockedStarGates.includes(500)) achievements.push("✨ Boss Mode");
     
     if (achievements.length > 0) {
       leaderboard += `🏆 **Unlocked Features**: ${achievements.join(" • ")}\n`;
     }
+  } else {
+    leaderboard += `🌟 **Star this repo to unlock special features!** (See milestones above)\n`;
   }
   
   return leaderboard;
@@ -227,8 +227,7 @@ async function main() {
   console.log("Rendering board to:", outFile);
   const buffer = render(currentState);
   fs.writeFileSync(path.resolve(process.cwd(), outFile), buffer);
-  console.log("Board image generated.");
-  // update README
+  console.log("Board image generated.");  // update README
   console.log("Updating README...");
   let readme = fs.readFileSync(readmeFile, "utf-8");
   const imgTag = `<img src="${outFile}?raw=true" alt="Snake Board">`;
@@ -240,6 +239,26 @@ async function main() {
     /<!-- SNAKE-BOARD-START -->[\s\S]*<!-- SNAKE-BOARD-END -->/,
     boardReplacement
   );
+  
+  // Update star progress if we have star count info
+  let starCount = 0;
+  try {
+    const { data: repo } = await octokit.rest.repos.get({ owner, repo });
+    starCount = repo.stargazers_count;
+    
+    // Update star progress in the README
+    const nextMilestone = starCount >= 500 ? 500 : starCount >= 250 ? 500 : starCount >= 100 ? 250 : 100;
+    const progressText = `**Current Progress**: ⭐ ${starCount} / ${nextMilestone} stars *(Check back for updates!)*`;
+    
+    readme = readme.replace(
+      /\*\*Current Progress\*\*: ⭐ \d+ \/ \d+ stars \*\(Check back for updates!\)\*/,
+      progressText
+    );
+    
+    console.log(`Updated star progress: ${starCount}/${nextMilestone}`);
+  } catch (error) {
+    console.error("Could not fetch star count for README update:", error.message);
+  }
   
   // Generate and update leaderboard section
   const leaderboardContent = generateLeaderboard(currentState);
@@ -254,7 +273,7 @@ ${leaderboardContent}`;
   );
   
   fs.writeFileSync(readmeFile, readme);
-  console.log("README updated with new leaderboard.");
+  console.log("README updated with new leaderboard and star progress.");
   
   // commit and push changes (only once at the end)
   console.log("Committing changes...");

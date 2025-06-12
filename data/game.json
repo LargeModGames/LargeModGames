@@ -27,9 +27,7 @@
   "lastFedBy": null,
   "moveCooldown": {
     "LargeModGames": 1749726521179
-  },
-  "meta": {
-    "hasWalls": true,
-    "hasBoss": false
+  },  "meta": {
+    "unlockedStarGates": []
   }
 }
