@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/LargeModGames/LargeModGames">
-    <img src="https://img.shields.io/github/license/LargeModGames/LargeModGames" alt="License"/>
+    <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="License: MIT"/>
     <img src="https://img.shields.io/github/actions/workflow/status/LargeModGames/LargeModGames/.github/workflows/arcade.yml" alt="CI"/>
     <img src="https://img.shields.io/github/issues/LargeModGames/LargeModGames?label=Help%20wanted" alt="Help wanted issues"/>
   </a>
