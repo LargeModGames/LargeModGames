@@ -1,19 +1,36 @@
-# .github/workflows/arcade.yml
 name: Snake Arcade
 on:
   schedule:
     - cron: '0 * * * *' # runs every hour
   workflow_dispatch:
+  issues:
+    types: [opened]
+  issue_comment:
+    types: [created]
+
 jobs:
   run:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: read
+      pull-requests: read
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: '20'
       - name: Install dependencies
         run: npm install
+      - name: Configure Git
+        run: |
+          git config --global user.name "Snake Arcade Bot"
+          git config --global user.email "action@github.com"
       - name: Run snake arcade
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
         run: node .github/run.mjs
