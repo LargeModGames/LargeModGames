@@ -36,7 +36,7 @@ export function render(state) {
   // draw snake head (brighter/different color)
   if (state.snake.length > 0) {
     const [headX, headY] = state.snake[state.snake.length - 1];
-    ctx.fillStyle = "#606060"; // gray for head
+    ctx.fillStyle = "#00bfff"; // bright blue for head
     ctx.fillRect(headX * CELL_SIZE, headY * CELL_SIZE, CELL_SIZE, CELL_SIZE);
 
     // add a small dot in the center of the head for extra clarity

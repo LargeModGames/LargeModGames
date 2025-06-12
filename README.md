@@ -16,6 +16,10 @@ LargeModGames moved R
 4. Eat food to grow and increase your score!
 5. Avoid walls and your own body
 
+**🟢 Green squares** = Snake body  
+**🔵 Blue square** = Snake head (front) - this is the part that moves!  
+**🔴 Red square** = Food
+
 ## Leaderboard
 
 Top players will be shown on the game board.
