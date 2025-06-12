@@ -62,7 +62,7 @@ async function main() {
   // update README
   console.log("Updating README...");
   let readme = fs.readFileSync(readmeFile, "utf-8");
-  const imgTag = `<img src="${outFile}?raw=true" alt="Snake Board">`;
+  const imgTag = `<img src="${outFile}?raw=true&t=${Date.now()}" alt="Snake Board">`;
   const status = logMessage;
   const replacement = `<!-- SNAKE-BOARD-START -->\n${imgTag}\n\n${status}\n<!-- SNAKE-BOARD-END -->`;
   readme = readme.replace(
