@@ -58,9 +58,8 @@ async function main() {
   
   currentState.lastMoveAt = lastTimestamp;  saveState(currentState, dataFile);
   console.log("State saved.");
-
-  // render and save image (use consistent filename)
-  const outFile = "snake-board.png";
+  // render and save image (use timestamped filename to avoid all caching)
+  const outFile = `snake-board-${Date.now()}.png`;
   console.log("Rendering board to:", outFile);
   const buffer = render(currentState);
   fs.writeFileSync(path.resolve(process.cwd(), outFile), buffer);
@@ -69,7 +68,7 @@ async function main() {
   // update README
   console.log("Updating README...");
   let readme = fs.readFileSync(readmeFile, "utf-8");
-  const imgTag = `<img src="${outFile}?raw=true&t=${Date.now()}" alt="Snake Board">`;
+  const imgTag = `<img src="${outFile}?raw=true" alt="Snake Board">`;
   const status = totalLogMessage.trim() || 'Awaiting next move...';
   const replacement = `<!-- SNAKE-BOARD-START -->\n${imgTag}\n\n${status}\n<!-- SNAKE-BOARD-END -->`;
   readme = readme.replace(
@@ -78,10 +77,11 @@ async function main() {
   );
   fs.writeFileSync(readmeFile, readme);
   console.log("README updated.");
-
   // commit and push changes
   console.log("Committing changes...");
   try {
+    // Remove old board files to keep repo clean
+    execSync(`git rm snake-board*.png 2>nul || true`, { stdio: "inherit" });
     execSync(`git add ${outFile} ${readmeFile} data/game.json`, {
       stdio: "inherit",
     });
