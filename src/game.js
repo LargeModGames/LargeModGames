@@ -31,7 +31,7 @@ export function move(state, dir, username) {
   if (!DIRS[dir]) return { state, didEat: false, didDie: false };
   const now = Date.now();
   state.moveCooldown = state.moveCooldown || {};
-  if (state.moveCooldown[username] && now - state.moveCooldown[username] < 3600000) {
+  if (state.moveCooldown[username] && now - state.moveCooldown[username] < 60000) { // 1 minute cooldown
     return { state, didEat: false, didDie: false };
   }
   state.moveCooldown[username] = now;

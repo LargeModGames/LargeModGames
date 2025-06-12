@@ -24,10 +24,7 @@
   },
   "turn": 0,
   "lastMoveAt": "2025-06-12T10:09:34Z",
-  "lastFedBy": null,
-  "moveCooldown": {
-    "LargeModGames": 1749722985946
-  },
+  "lastFedBy": null,  "moveCooldown": {},
   "meta": {
     "hasWalls": true,
     "hasBoss": false

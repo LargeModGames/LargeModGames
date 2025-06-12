@@ -21,18 +21,21 @@ async function main() {
   state.lastMoveAt = state.lastMoveAt || new Date(0).toISOString();
   console.log('Current state:', JSON.stringify(state, null, 2));
   console.log('Looking for moves since:', state.lastMoveAt);
-
   // fetch new moves
   console.log('Fetching new moves...');
   const moves = await getNewMoves(state.lastMoveAt);
   console.log('Found moves:', moves);
   
-  if (moves.length === 0) {
+  // Filter out moves that are not actually newer than lastMoveAt
+  const newerMoves = moves.filter(move => new Date(move.timestamp) > new Date(state.lastMoveAt));
+  console.log('Newer moves:', newerMoves);
+  
+  if (newerMoves.length === 0) {
     console.log('No new moves found. Exiting.');
     return;
   }
 
-  const { username, dir, timestamp } = moves[0];
+  const { username, dir, timestamp } = newerMoves[0];
   console.log(`Processing move: ${username} -> ${dir} at ${timestamp}`);
   
   const { state: newState, didEat, didDie } = move(state, dir, username);
