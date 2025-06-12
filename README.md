@@ -5,7 +5,7 @@ A turn-based Snake game that lives in this GitHub README! Comment `/move U/D/L/R
 <!-- SNAKE-BOARD-START -->
 <img src="snake-board.png?raw=true" alt="Snake Board">
 
-LargeModGames died!
+LargeModGames moved R
 <!-- SNAKE-BOARD-END -->
 
 ## How to Play
