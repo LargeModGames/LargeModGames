@@ -265,12 +265,33 @@ async function main() {
   console.log("Rendering board to:", outFile);
   const buffer = render(currentState);
   fs.writeFileSync(path.resolve(process.cwd(), outFile), buffer);
-  console.log("Board image generated."); // update README
+  console.log("Board image generated.");  // update README
   console.log("Updating README...");
   let readme = fs.readFileSync(readmeFile, "utf-8");
-  const imgTag = `<img src="${outFile}?raw=true" alt="Snake Board">`;
   const status = totalLogMessage.trim() || "Awaiting next move...";
-  const boardReplacement = `<!-- SNAKE-BOARD-START -->\n${imgTag}\n\n${status}\n<!-- SNAKE-BOARD-END -->`;
+  
+  // Get top 3 players for compact display
+  const topPlayers = Object.entries(currentState.scores || {})
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 3)
+    .map(([user, score]) => `@${user} ${score}`)
+    .join(" • ");
+  
+  const topPlayersText = topPlayers || "No players yet!";
+  
+  // Generate compact board replacement
+  const boardReplacement = `<!-- SNAKE-BOARD-START -->
+<p align="center">
+  <img src="${outFile}?raw=true" width="176" alt="Snake game board"/>
+</p>
+<p align="center">
+  🕹️ <strong>Play:</strong> comment <code>/move U D L R</code> on <a href="../../issues/1">Issue #1</a><br>
+  ⭐ Next unlock: 100 ★ (Speed Boost) · 250 ★ (Power Pellets) · 500 ★ (Boss Mode)<br>
+  🏆 Top players: ${topPlayersText}
+</p>
+
+${status}
+<!-- SNAKE-BOARD-END -->`;
 
   // Update game board section
   readme = readme.replace(

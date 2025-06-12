@@ -1,9 +1,22 @@
+<p align="center">
+  <a href="https://github.com/LargeModGames/LargeModGames">
+    <img src="https://img.shields.io/github/license/LargeModGames/LargeModGames" alt="License"/>
+    <img src="https://img.shields.io/github/actions/workflow/status/LargeModGames/LargeModGames/.github/workflows/arcade.yml" alt="CI"/>
+    <img src="https://img.shields.io/github/issues/LargeModGames/LargeModGames?label=Help%20wanted" alt="Help wanted issues"/>
+  </a>
+</p>
+
 # Snake Arcade Game
 
-A turn-based Snake game that lives in this GitHub README! Comment `/move U/D/L/R` on [Issue #1](../../issues/1) to play.
-
 <!-- SNAKE-BOARD-START -->
-<img src="snake-board-1749728680727.png?raw=true" alt="Snake Board">
+<p align="center">
+  <img src="snake-board-1749728680727.png?raw=true" width="176" alt="Snake game board"/>
+</p>
+<p align="center">
+  🕹️ <strong>Play:</strong> comment <code>/move U D L R</code> on <a href="../../issues/1">Issue #1</a><br>
+  ⭐ Next unlock: 100 ★ (Speed Boost) · 250 ★ (Power Pellets) · 500 ★ (Boss Mode)<br>
+  🏆 Top player: @LargeModGames 1 point
+</p>
 
 LargeModGames moved U.
 <!-- SNAKE-BOARD-END -->
