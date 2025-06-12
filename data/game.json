@@ -17,16 +17,11 @@
   "food": [
     8,
     2
-  ],
-  "scores": {
-    "testuser": 5.5,
-    "LargeModGames": 6.699999999999996
+  ],  "scores": {
   },
   "turn": 0,
   "lastMoveAt": "2025-06-12T11:20:38Z",
-  "lastFedBy": null,
-  "moveCooldown": {
-    "LargeModGames": 1749727250426
+  "lastFedBy": null,  "moveCooldown": {
   },
   "meta": {
     "unlockedStarGates": []

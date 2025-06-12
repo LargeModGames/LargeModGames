@@ -38,10 +38,9 @@ export function move(state, dir, username) {
   ) {
     // 30 second cooldown per player
     return { state, didEat: false, didDie: false, deathReason: null };
-  }
-  state.moveCooldown[username] = now;
+  }  state.moveCooldown[username] = now;
   state.scores = state.scores || {};
-  state.scores[username] = (state.scores[username] || 0) + 0.1;
+  state.scores[username] = (state.scores[username] || 0) + 1; // 1 point per move
   const [dx, dy] = DIRS[dir];
   const head = state.snake[state.snake.length - 1];
   const newHead = [head[0] + dx, head[1] + dy];
@@ -71,12 +70,10 @@ export function move(state, dir, username) {
     ];
     state.food = spawnFood(state);
   } else {
-    state.snake.push(newHead);
-    // Check food collision
+    state.snake.push(newHead);    // Check food collision
     if (newHead[0] === state.food[0] && newHead[1] === state.food[1]) {
       didEat = true;
-      state.scores[username] += 1;
-      if (state.lastFedBy === username) state.scores[username] += 1;
+      state.scores[username] += 3; // 3 points for eating food
       state.lastFedBy = username;
       state.food = spawnFood(state);
     } else {

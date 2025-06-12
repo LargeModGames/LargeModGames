@@ -1,5 +1,5 @@
 node_modules/
 
-# Keep only the main board file, ignore any temporary board files
-board-*.png
-!snake-board.png
+# Test files
+test-*.mjs
+debug-*.mjs

@@ -107,14 +107,14 @@ function generateLeaderboard(state) {
   leaderboard += "|------|--------|-------|---------------|\n";
   const cooldowns = state.moveCooldown || {};
   const now = Date.now();
-
   entries.forEach(([username, score], index) => {
     const rank = index + 1;
-    const displayScore = Math.floor(score * 10) / 10; // Round to 1 decimal
+    const displayScore = Math.floor(score); // Scores are now whole numbers
 
-    // Calculate data-driven status
-    const moveCount = Math.floor(score * 10); // Each 0.1 score = 1 move
-    let status = `${moveCount} moves`;
+    // Calculate data-driven status  
+    // Note: Score now includes both moves (1pt each) and food bonuses (3pts each)
+    // So we can't directly calculate move count from score, use score as approximate activity
+    let status = `${displayScore} pts`;
     
     // Add additional context for more interesting data
     if (cooldowns[username]) {
@@ -127,13 +127,12 @@ function generateLeaderboard(state) {
       } else if (hoursAgo >= 1) {
         status = `${hoursAgo}h ago`;
       } else if (minutesAgo >= 1) {
-        status = `${minutesAgo}m ago`;
-      } else {
+        status = `${minutesAgo}m ago`;      } else {
         status = "Just played!";
       }
     } else {
       // No recent activity recorded
-      status = `${moveCount} moves`;
+      status = `${displayScore} pts`;
     }
 
     // Add medal emojis for top 3
@@ -148,17 +147,16 @@ function generateLeaderboard(state) {
 
     leaderboard += `| ${rankDisplay} | ${playerName} | ${displayScore} | ${status} |\n`;
   });
-
   // Add stats footer
   const totalPlayers = Object.keys(scores).length;
-  const totalMoves = Object.values(scores).reduce(
-    (sum, score) => sum + Math.floor(score * 10),
+  const totalPoints = Object.values(scores).reduce(
+    (sum, score) => sum + Math.floor(score),
     0
   );
   const snakeLength = state.snake ? state.snake.length : 3;
 
   leaderboard += "\n";
-  leaderboard += `📊 **Game Stats**: ${totalPlayers} players • ${totalMoves} total moves • Snake length: ${snakeLength}\n`;
+  leaderboard += `📊 **Game Stats**: ${totalPlayers} players • ${totalPoints} total points • Snake length: ${snakeLength}\n`;
   leaderboard += `🎯 **Current Goal**: Reach the food at position (${
     state.food ? state.food.join(", ") : "unknown"
   })\n`; // Add achievement info if star gates are unlocked
@@ -320,13 +318,44 @@ ${leaderboardContent}`;
   readme = readme.replace(/## Leaderboard[\s\S]*$/, leaderboardReplacement);
 
   fs.writeFileSync(readmeFile, readme);
-  console.log("README updated with new leaderboard and star progress.");
-
-  // commit and push changes (only once at the end)
+  console.log("README updated with new leaderboard and star progress.");  // commit and push changes (only once at the end)
   console.log("Committing changes...");
   try {
-    // Remove old board files to keep repo clean
-    execSync(`git rm snake-board*.png 2>nul || true`, { stdio: "inherit" });
+    // Remove old board files to keep repo clean (keep only the new one)
+    console.log("Cleaning up old board files...");
+    
+    // Get the current board filename from README to preserve it temporarily
+    let currentBoardFile = null;
+    try {
+      const readme = fs.readFileSync(readmeFile, "utf-8");
+      const match = readme.match(/snake-board-(\d+)\.png/);
+      if (match) {
+        currentBoardFile = match[0];
+      }
+    } catch (error) {
+      console.log("Could not determine current board file from README");
+    }
+    
+    // Get list of existing snake-board files
+    const existingFiles = fs.readdirSync(process.cwd())
+      .filter(file => file.startsWith('snake-board-') && file.endsWith('.png'))
+      .filter(file => file !== outFile && file !== currentBoardFile); // Don't remove the new file or current board
+    
+    // Remove old files from git and filesystem
+    for (const oldFile of existingFiles) {
+      try {
+        execSync(`git rm "${oldFile}"`, { stdio: "inherit" });
+        console.log(`Removed old file: ${oldFile}`);
+      } catch (error) {
+        console.log(`Failed to remove ${oldFile}: ${error.message}`);
+        // Try to remove from filesystem if git rm failed
+        if (fs.existsSync(oldFile)) {
+          fs.unlinkSync(oldFile);
+          console.log(`Manually deleted: ${oldFile}`);
+        }
+      }
+    }
+    
     execSync(`git add ${outFile} ${readmeFile} data/game.json`, {
       stdio: "inherit",
     });
