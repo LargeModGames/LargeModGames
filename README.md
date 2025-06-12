@@ -10,7 +10,7 @@
 
 <!-- SNAKE-BOARD-START -->
 <p align="center">
-  <img src="snake-board-1749735344705.png?raw=true" width="176" alt="Snake game board"/>
+  <img src="snake-board-1749735366303.png?raw=true" width="176" alt="Snake game board"/>
 </p>
 <p align="center">
   🕹️ <strong>Play:</strong> comment <code>/move U D L R</code> on <a href="../../issues/1">Issue #1</a><br>
