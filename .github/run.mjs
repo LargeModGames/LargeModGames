@@ -35,28 +35,38 @@ async function main() {
   if (newerMoves.length === 0) {
     console.log("No new moves found. Exiting.");
     return;
-  }  // Process ALL new moves in chronological order
+  } // Process ALL new moves in chronological order
   let currentState = state;
   let lastTimestamp = state.lastMoveAt;
-  let totalLogMessage = '';
-  
+  let totalLogMessage = "";
+
   for (const { username, dir, timestamp } of newerMoves) {
-    console.log(`Processing move: ${username} -> ${dir} at ${timestamp}`);
-    
-    const { state: newState, didEat, didDie } = move(currentState, dir, username);
+    console.log(`Processing move: ${username} -> ${dir} at ${timestamp}`);    const {
+      state: newState,
+      didEat,
+      didDie,
+      deathReason,
+    } = move(currentState, dir, username);
     currentState = newState;
-    lastTimestamp = timestamp;
-    
-    let moveLog = '';
+    lastTimestamp = timestamp;    let moveLog = "";
     if (didEat) moveLog += `${username} ate food! `;
-    if (didDie) moveLog += `${username} died! `;
+    if (didDie) {
+      if (deathReason === 'wall') {
+        moveLog += `${username} hit a wall and died! `;
+      } else if (deathReason === 'self') {
+        moveLog += `${username} ran into themselves and died! `;
+      } else {
+        moveLog += `${username} died! `;
+      }
+    }
     if (!didEat && !didDie) moveLog += `${username} moved ${dir}. `;
-    
+
     totalLogMessage += moveLog;
-    console.log("Move result:", { didEat, didDie });
+    console.log("Move result:", { didEat, didDie, deathReason });
   }
-  
-  currentState.lastMoveAt = lastTimestamp;  saveState(currentState, dataFile);
+
+  currentState.lastMoveAt = lastTimestamp;
+  saveState(currentState, dataFile);
   console.log("State saved.");
   // render and save image (use timestamped filename to avoid all caching)
   const outFile = `snake-board-${Date.now()}.png`;
@@ -69,7 +79,7 @@ async function main() {
   console.log("Updating README...");
   let readme = fs.readFileSync(readmeFile, "utf-8");
   const imgTag = `<img src="${outFile}?raw=true" alt="Snake Board">`;
-  const status = totalLogMessage.trim() || 'Awaiting next move...';
+  const status = totalLogMessage.trim() || "Awaiting next move...";
   const replacement = `<!-- SNAKE-BOARD-START -->\n${imgTag}\n\n${status}\n<!-- SNAKE-BOARD-END -->`;
   readme = readme.replace(
     /<!-- SNAKE-BOARD-START -->[\s\S]*<!-- SNAKE-BOARD-END -->/,
@@ -91,7 +101,8 @@ async function main() {
     execSync(`git push`, { stdio: "inherit" });
     console.log("Changes pushed successfully.");
   } catch (error) {
-    console.error("Error during git operations:", error.message);    throw error;
+    console.error("Error during git operations:", error.message);
+    throw error;
   }
 }
 

@@ -28,7 +28,7 @@ export function saveState(state, filePath = path.resolve("data/game.json")) {
  * @returns {{state: Object, didEat: boolean, didDie: boolean}}
  */
 export function move(state, dir, username) {
-  if (!DIRS[dir]) return { state, didEat: false, didDie: false };
+  if (!DIRS[dir]) return { state, didEat: false, didDie: false, deathReason: null };
   const now = Date.now();
   state.moveCooldown = state.moveCooldown || {};
   if (
@@ -36,7 +36,7 @@ export function move(state, dir, username) {
     now - state.moveCooldown[username] < 60000
   ) {
     // 1 minute cooldown
-    return { state, didEat: false, didDie: false };
+    return { state, didEat: false, didDie: false, deathReason: null };
   }
   state.moveCooldown[username] = now;
   state.scores = state.scores || {};
@@ -45,20 +45,19 @@ export function move(state, dir, username) {
   const head = state.snake[state.snake.length - 1];
   const newHead = [head[0] + dx, head[1] + dy];
   const w = 11,
-    h = 11;
-  let didEat = false,
-    didDie = false;
+    h = 11;  let didEat = false,
+    didDie = false,
+    deathReason = '';
   const key = (pos) => `${pos[0]},${pos[1]}`;
   const bodySet = new Set(state.snake.map(key));
-  // Check wall or self-collision
-  if (
-    newHead[0] < 0 ||
-    newHead[0] >= w ||
-    newHead[1] < 0 ||
-    newHead[1] >= h ||
-    bodySet.has(key(newHead))
-  ) {
+  
+  // Check collisions separately
+  const hitWall = newHead[0] < 0 || newHead[0] >= w || newHead[1] < 0 || newHead[1] >= h;
+  const hitSelf = bodySet.has(key(newHead));
+  
+  if (hitWall || hitSelf) {
     didDie = true;
+    deathReason = hitWall ? 'wall' : 'self';
     const L = state.snake.length;
     state.scores[username] += Math.floor(L / 2);
     // reset snake to center length 3
@@ -81,7 +80,7 @@ export function move(state, dir, username) {
       state.snake.shift();
     }
   }
-  return { state, didEat, didDie };
+  return { state, didEat, didDie, deathReason };
 }
 
 /**
