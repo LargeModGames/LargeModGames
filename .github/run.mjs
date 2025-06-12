@@ -50,9 +50,8 @@ async function main() {
 
   saveState(newState, dataFile);
   console.log('State saved.');
-
-  // render and save image
-  const outFile = `board-${Date.now()}.png`;
+  // render and save image (use consistent filename)
+  const outFile = 'snake-board.png';
   console.log('Rendering board to:', outFile);
   const buffer = render(newState);
   fs.writeFileSync(path.resolve(process.cwd(), outFile), buffer);
