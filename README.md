@@ -1,10 +1,12 @@
-[![GitHub Stats](https://github-readme-stats.vercel.app/api?username=LargeModGames&show_icons=true&theme=monokai)](https://github.com/anuraghazra/github-readme-stats)
+## Hi there 👋
 
-[![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=LargeModGames&theme=monokai)](https://github.com/anuraghazra/github-readme-stats)
+![GitHub Stats](https://github-readme-stats.vercel.app/api?username=LargeModGames&show_icons=true&theme=monokai)
+
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=LargeModGames&theme=monokai)
 
 ## Pinned Repositories
 
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=LargeModGames&repo=LargeModGames&theme=monokai)](https://github.com/LargeModGames/LargeModGames)
+![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=LargeModGames&repo=LargeModGames&theme=monokai)
 <!--
 **LargeModGames/LargeModGames** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
