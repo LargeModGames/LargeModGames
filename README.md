@@ -1,12 +1,12 @@
 ## Hi there 👋
 
-![GitHub Stats](github-readme-stats-zeta-eight-88.vercel.app/api?username=LargeModGames&show_icons=true&theme=monokai)
+![GitHub Stats](https://github-readme-stats-zeta-eight-88.vercel.app/api?username=LargeModGames&show_icons=true&theme=monokai)
 
-![Top Languages](github-readme-stats-zeta-eight-88.vercel.app/api/top-langs/?username=LargeModGames&theme=monokai)
+![Top Languages](https://github-readme-stats-zeta-eight-88.vercel.app/api/top-langs/?username=LargeModGames&theme=monokai)
 
 ## Pinned Repositories
 
-![Readme Card](github-readme-stats-zeta-eight-88.vercel.app/api/pin/?username=LargeModGames&repo=LargeModGames&theme=monokai)
+![Readme Card](https://github-readme-stats-zeta-eight-88.vercel.app/api/pin/?username=LargeModGames&repo=spotatui&theme=monokai)
 <!--
 **LargeModGames/LargeModGames** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
