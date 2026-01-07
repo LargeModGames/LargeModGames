@@ -1,0 +1,24 @@
+name: GitHub Streak Automation
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch: # Allow manual trigger
+
+jobs:
+  auto-commit:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Auto commit
+        run: |
+          date >> heartbeat.txt
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add heartbeat.txt
+          git commit -m "chore: daily heartbeat [skip ci]" || exit 0
+          git push

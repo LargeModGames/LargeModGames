@@ -82,6 +82,6 @@
 
 <div align="center">
 
-![Snake Animation](https://raw.githubusercontent.com/Platane/snk/output/github-contribution-grid-snake-dark.svg)
+![Snake Animation](https://raw.githubusercontent.com/LargeModGames/LargeModGames/output/github-contribution-grid-snake-dark.svg)
 
 </div>
