@@ -46,19 +46,9 @@
 
 ![GitHub Stats](https://github-readme-stats-zeta-eight-88.vercel.app/api?username=LargeModGames&show_icons=true&theme=monokai&hide_border=true&bg_color=0D1117)
 
-![GitHub Streak](https://streak-stats.demolab.com?user=LargeModGames&theme=monokai-metallian&hide_border=true&background=0D1117&fire=DD2727&ring=F7931E&currStreakLabel=F7931E)
+![GitHub Streak](https://github-readme-stats-zeta-eight-88.vercel.app/api?username=LargeModGames&show_icons=true&theme=monokai&hide_border=true&bg_color=0D1117&include_all_commits=true&count_private=true)
 
 ![Top Languages](https://github-readme-stats-zeta-eight-88.vercel.app/api/top-langs/?username=LargeModGames&theme=monokai&hide_border=true&bg_color=0D1117&layout=compact)
-
-</div>
-
----
-
-## Trophies
-
-<div align="center">
-
-![trophy](https://github-profile-trophy.vercel.app/?username=LargeModGames&theme=monokai&no-frame=true&no-bg=true&margin-w=15&margin-h=15&column=7)
 
 </div>
 
