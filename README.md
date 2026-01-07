@@ -21,11 +21,13 @@
 
 ---
 
-## Now Playing
+## GitHub Stats
 
 <div align="center">
 
-[![spotify-github-profile](https://spotify-github-profile.kittinanx.com/api/view?uid=jaysankatsing&cover_image=true&theme=novatorem&show_offline=true&background_color=0d1117&interchange=true&bar_color=f7931e&bar_color_cover=true)](https://spotify-github-profile.kittinanx.com/api/view?uid=jaysankatsing&redirect=true)
+![GitHub Stats](https://github-readme-stats-zeta-eight-88.vercel.app/api?username=LargeModGames&show_icons=true&theme=monokai&hide_border=true&bg_color=0D1117)
+
+![Top Languages](https://github-readme-stats-zeta-eight-88.vercel.app/api/top-langs/?username=LargeModGames&theme=monokai&hide_border=true&bg_color=0D1117&layout=compact)
 
 </div>
 
@@ -48,21 +50,9 @@
 
 <div align="center">
 
-![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=LargeModGames&theme=monokai&hide_border=true&background=0D1117)
+![GitHub Streak](https://streak-stats.demolab.com?user=LargeModGames&theme=dark&hide_border=true)
 
-![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=LargeModGames&theme=react-dark&bg_color=0D1117&color=F7931E&line=F7931E&point=FFFFFF&hide_border=true)
-
-</div>
-
----
-
-## GitHub Stats
-
-<div align="center">
-
-![GitHub Stats](https://github-readme-stats-zeta-eight-88.vercel.app/api?username=LargeModGames&show_icons=true&theme=monokai&hide_border=true&bg_color=0D1117)
-
-![Top Languages](https://github-readme-stats-zeta-eight-88.vercel.app/api/top-langs/?username=LargeModGames&theme=monokai&hide_border=true&bg_color=0D1117&layout=compact)
+![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=LargeModGames&theme=github-dark&hide_border=true&bg_color=0D1117)
 
 </div>
 
@@ -78,11 +68,11 @@
 
 ---
 
-## Trophy Case
+## Now Playing
 
 <div align="center">
 
-![Trophies](https://github-profile-trophy.vercel.app/?username=LargeModGames&theme=onedark&no-frame=true&column=6&margin-w=8&margin-h=8)
+[![spotify-github-profile](https://spotify-github-profile.kittinanx.com/api/view?uid=jaysankatsing&cover_image=true&theme=novatorem&show_offline=true&background_color=0d1117&interchange=false&bar_color=f7931e&bar_color_cover=true)](https://spotify-github-profile.kittinanx.com/api/view?uid=jaysankatsing&redirect=true)
 
 </div>
 
