@@ -31,7 +31,10 @@
 
 <div align="center">
 
-![Tech Stack](https://skillicons.dev/icons?i=c,cpp,rust,haskell,erlang,py,linux,git&theme=dark)
+![Tech Stack](https://skillicons.dev/icons?i=c,cpp,rust,py,linux,git&theme=dark)
+
+![Haskell](https://img.shields.io/badge/Haskell-5D4F85?style=for-the-badge&logo=haskell&logoColor=white)
+![Erlang](https://img.shields.io/badge/Erlang-A90533?style=for-the-badge&logo=erlang&logoColor=white)
 
 </div>
 
@@ -43,7 +46,7 @@
 
 ![GitHub Stats](https://github-readme-stats-zeta-eight-88.vercel.app/api?username=LargeModGames&show_icons=true&theme=monokai&hide_border=true&bg_color=0D1117)
 
-[![GitHub Streak](https://streak-stats.demolab.com?user=LargeModGames&theme=monokai-metallian&hide_border=true&background=0D1117&fire=DD2727&ring=F7931E&currStreakLabel=F7931E)](https://git.io/streak-stats)
+![GitHub Streak](https://streak-stats.demolab.com?user=LargeModGames&theme=monokai-metallian&hide_border=true&background=0D1117&fire=DD2727&ring=F7931E&currStreakLabel=F7931E)
 
 ![Top Languages](https://github-readme-stats-zeta-eight-88.vercel.app/api/top-langs/?username=LargeModGames&theme=monokai&hide_border=true&bg_color=0D1117&layout=compact)
 
@@ -55,7 +58,7 @@
 
 <div align="center">
 
-[![trophy](https://github-profile-trophy.vercel.app/?username=LargeModGames&theme=monokai&no-frame=true&no-bg=true&margin-w=15&margin-h=15&column=7)](https://github.com/ryo-ma/github-profile-trophy)
+![trophy](https://github-profile-trophy.vercel.app/?username=LargeModGames&theme=monokai&no-frame=true&no-bg=true&margin-w=15&margin-h=15&column=7)
 
 </div>
 
