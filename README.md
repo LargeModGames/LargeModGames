@@ -4,7 +4,7 @@
 ![Header](https://capsule-render.vercel.app/api?type=waving&color=F7931E&height=190&section=header&text=LargeModGames&fontSize=48&fontColor=0D1117&animation=fadeIn&fontAlignY=35)
 
 <!-- Typing SVG Animation -->
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=3000&pause=1000&color=F7931E&center=true&vCenter=true&random=false&width=520&lines=Hi+there,+I'm+LargeModGames;Building+Cool+Stuff;Rust+%7C+TUI+%7C+Systems)](https://github.com/LargeModGames)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=28&duration=3000&pause=1000&color=F7931E&center=true&vCenter=true&random=false&width=520&lines=Hi+there,+I'm+LargeModGames;Building+Cool+Stuff)](https://github.com/LargeModGames)
 
 ![Profile Views](https://komarev.com/ghpvc/?username=LargeModGames&style=for-the-badge&color=orange)
 ![Stars](https://img.shields.io/github/stars/LargeModGames?style=for-the-badge&color=F7931E)
