@@ -50,7 +50,7 @@
 
 <div align="center">
 
-![GitHub Streak](https://streak-stats.demolab.com?user=LargeModGames&theme=dark&hide_border=true)
+![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=LargeModGames&theme=dark&hide_border=true)
 
 ![Activity Graph](https://github-readme-activity-graph.vercel.app/graph?username=LargeModGames&theme=github-dark&hide_border=true&bg_color=0D1117)
 
@@ -82,6 +82,6 @@
 
 <div align="center">
 
-![Snake Animation](https://raw.githubusercontent.com/LargeModGames/LargeModGames/output/github-contribution-grid-snake-dark.svg)
+![Snake Animation](https://raw.githubusercontent.com/LargeModGames/LargeModGames/output/github-contribution-grid-snake-dark.svg?v=1)
 
 </div>
