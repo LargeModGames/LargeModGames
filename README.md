@@ -42,6 +42,6 @@ I like building tools I can actually use, whatever language gets the job done be
 
 <div align="center">
 
-![Snake Animation](https://raw.githubusercontent.com/LargeModGames/LargeModGames/output/github-contribution-grid-snake-dark.svg?v=1)
+![Snake Animation](https://github.com/LargeModGames/LargeModGames/blob/output/github-contribution-grid-snake-dark.svg?raw=1)
 
 </div>
