@@ -38,11 +38,25 @@ I like building tools I can actually use, whatever language gets the job done be
 
 </div>
 
-## Profile Trophies
+## GitHub Achievements
 
 <div align="center">
 
-![Trophies](https://github-trophies.vercel.app/?username=LargeModGames&theme=onedark&no-frame=true&no-bg=true&margin-w=12&row=1&column=7)
+<a href="https://github.com/LargeModGames?tab=achievements">
+  <img src="https://githubachievements.com/cdn-cgi/image/width=128/images/badges/GalaxyBrain.png" width="74" alt="Galaxy Brain" />
+</a>
+<a href="https://github.com/LargeModGames?tab=achievements">
+  <img src="https://githubachievements.com/cdn-cgi/image/width=128/images/badges/PullShark.png" width="74" alt="Pull Shark" />
+</a>
+<a href="https://github.com/LargeModGames?tab=achievements">
+  <img src="https://githubachievements.com/cdn-cgi/image/width=128/images/badges/YOLO.png" width="74" alt="YOLO" />
+</a>
+<a href="https://github.com/LargeModGames?tab=achievements">
+  <img src="https://githubachievements.com/cdn-cgi/image/width=128/images/badges/QuickDraw_SkinTone1.png" width="74" alt="Quickdraw" />
+</a>
+<a href="https://github.com/LargeModGames?tab=achievements">
+  <img src="https://githubachievements.com/cdn-cgi/image/width=128/images/badges/StarStruck_SkinTone1.png" width="74" alt="Starstruck" />
+</a>
 
 </div>
 
