@@ -42,7 +42,7 @@ I like building tools I can actually use, whatever language gets the job done be
 
 <div align="center">
 
-![Trophies](https://github-profile-trophy.vercel.app/?username=LargeModGames&theme=onedark&no-frame=true&no-bg=true&margin-w=12&row=1&column=7)
+![Trophies](https://github-trophies.vercel.app/?username=LargeModGames&theme=onedark&no-frame=true&no-bg=true&margin-w=12&row=1&column=7)
 
 </div>
 
