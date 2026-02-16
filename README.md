@@ -18,7 +18,7 @@ I like building tools I can actually use, whatever language gets the job done be
 
 ## Current Project
 
-[![spotatui card](https://github-readme-stats.vercel.app/api/pin/?username=LargeModGames&repo=spotatui&theme=monokai&hide_border=true)](https://github.com/LargeModGames/spotatui)
+[![spotatui card](https://github-readme-stats-zeta-eight-88.vercel.app/api/pin/?username=LargeModGames&repo=spotatui&theme=monokai&hide_border=true)](https://github.com/LargeModGames/spotatui)
 
 ## Tech I Use
 
@@ -28,9 +28,9 @@ I like building tools I can actually use, whatever language gets the job done be
 
 <div align="center">
 
-![GitHub Stats](https://github-readme-stats.vercel.app/api?username=LargeModGames&show_icons=true&theme=monokai&hide_border=true)
+![GitHub Stats](https://github-readme-stats-zeta-eight-88.vercel.app/api?username=LargeModGames&show_icons=true&theme=monokai&hide_border=true)
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=LargeModGames&layout=compact&theme=monokai&hide_border=true)
+![Top Languages](https://github-readme-stats-zeta-eight-88.vercel.app/api/top-langs/?username=LargeModGames&layout=compact&theme=monokai&hide_border=true)
 
 ![GitHub Streak](https://github-readme-streak-stats.herokuapp.com/?user=LargeModGames&theme=monokai&hide_border=true)
 
