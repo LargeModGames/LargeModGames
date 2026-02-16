@@ -38,6 +38,22 @@ I like building tools I can actually use, whatever language gets the job done be
 
 </div>
 
+## Profile Trophies
+
+<div align="center">
+
+![Trophies](https://github-profile-trophy.vercel.app/?username=LargeModGames&theme=onedark&no-frame=true&no-bg=true&margin-w=12&row=1&column=7)
+
+</div>
+
+## 3D Contribution Calendar
+
+<div align="center">
+
+![3D Contribution Calendar](https://github.com/LargeModGames/LargeModGames/blob/output/profile-3d-contrib/profile-night-rainbow.svg?raw=1)
+
+</div>
+
 ## Contribution Snake
 
 <div align="center">
