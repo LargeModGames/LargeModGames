@@ -16,9 +16,14 @@ jobs:
 
       - name: Auto commit
         run: |
-          date >> heartbeat.txt
           git config --local user.name "${{ github.repository_owner }}"
           git config --local user.email "${{ github.repository_owner }}@users.noreply.github.com"
-          git add heartbeat.txt
-          git commit -m "chore: daily heartbeat [skip ci]" || exit 0
+
+          commit_count=$((RANDOM % 10 + 1))
+          for commit_number in $(seq 1 "$commit_count"); do
+            printf '%s heartbeat %s/%s\n' "$(date -u --iso-8601=seconds)" "$commit_number" "$commit_count" >> heartbeat.txt
+            git add heartbeat.txt
+            git commit -m "chore: daily heartbeat ${commit_number}/${commit_count} [skip ci]"
+          done
+
           git push
