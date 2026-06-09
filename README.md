@@ -16,9 +16,11 @@ I'm a law student from the Netherlands.
 I code for fun (and yes, also as procrastination).
 I like building tools I can actually use, whatever language gets the job done best.
 
-## Current Project
+## Current Projects
 
 [![spotatui card](https://github-readme-stats-zeta-eight-88.vercel.app/api/pin/?username=LargeModGames&repo=spotatui&theme=monokai&hide_border=true)](https://github.com/LargeModGames/spotatui)
+[![steamie card](https://github-readme-stats-zeta-eight-88.vercel.app/api/pin/?username=LargeModGames&repo=steamie&theme=monokai&hide_border=true)](https://github.com/LargeModGames/steamie)
+[![steam-cm-protocol card](https://github-readme-stats-zeta-eight-88.vercel.app/api/pin/?username=LargeModGames&repo=steam-cm-protocol&theme=monokai&hide_border=true)](https://github.com/LargeModGames/steam-cm-protocol)
 
 ## Tech I Use
 
