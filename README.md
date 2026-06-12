@@ -2,19 +2,12 @@
 
 ![Header](https://capsule-render.vercel.app/api?type=waving&color=F7931E,FFB347,1A1A1A&height=220&section=header&text=LargeModGames&fontSize=54&fontColor=FFFFFF&animation=fadeIn&fontAlignY=35)
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=700&size=24&duration=2800&pause=1000&color=F7931E&center=true&vCenter=true&random=false&width=920&lines=Law+student+from+the+Netherlands;I+procrastinate+by+building+software;I+care+about+speed%2C+reliability%2C+and+clean+tools)](https://github.com/LargeModGames)
 
 ![Profile Views](https://komarev.com/ghpvc/?username=LargeModGames&style=for-the-badge&color=orange)
 ![Followers](https://img.shields.io/github/followers/LargeModGames?style=for-the-badge&color=F7931E)
 ![Stars](https://img.shields.io/github/stars/LargeModGames?style=for-the-badge&color=F7931E)
 
-</div>
 
-## Hi
-
-I'm a law student from the Netherlands.
-I code for fun (and yes, also as procrastination).
-I like building tools I can actually use, whatever language gets the job done best.
 
 ## Current Projects
 
