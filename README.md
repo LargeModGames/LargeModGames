@@ -2,6 +2,7 @@
 
 ![Header](https://capsule-render.vercel.app/api?type=waving&color=F7931E,FFB347,1A1A1A&height=220&section=header&text=LargeModGames&fontSize=54&fontColor=FFFFFF&animation=fadeIn&fontAlignY=35)
 
+[![Now playing on spotatui](https://spotatui.com/widget/largemodgames.svg)](https://spotatui.com)
 
 ![Profile Views](https://komarev.com/ghpvc/?username=LargeModGames&style=for-the-badge&color=orange)
 ![Followers](https://img.shields.io/github/followers/LargeModGames?style=for-the-badge&color=F7931E)
