@@ -4,6 +4,8 @@
 
 [![Now playing on spotatui](https://spotatui.com/widget/largemodgames.svg)](https://spotatui.com)
 
+[![Discord Presence](https://lanyard.cnrad.dev/api/358199352717475840)](https://discord.com/users/358199352717475840)
+
 ![Profile Views](https://komarev.com/ghpvc/?username=LargeModGames&style=for-the-badge&color=orange)
 ![Followers](https://img.shields.io/github/followers/LargeModGames?style=for-the-badge&color=F7931E)
 ![Stars](https://img.shields.io/github/stars/LargeModGames?style=for-the-badge&color=F7931E)
