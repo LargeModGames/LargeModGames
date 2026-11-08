@@ -99,7 +99,9 @@ tokens), friends and presence, live chat, library and achievement data. Async, o
 
 <sub>**Rust** is where most of my time goes</sub>
 
-<img src="https://skillicons.dev/icons?i=c,cpp,py,linux,git,haskell,erlang" height="46" alt="C, C++, Python, Linux, Git, Haskell, Erlang" />
+<img src="https://skillicons.dev/icons?i=c,cpp,cs,ts,kotlin,lua,py,haskell,erlang,bash,powershell" height="46" alt="C, C++, C#, TypeScript, Kotlin, Lua, Python, Haskell, Erlang, Bash, PowerShell" />
+<br />
+<img src="https://skillicons.dev/icons?i=react,nextjs,sqlite,linux,arch,neovim,git,githubactions,docker,cloudflare" height="46" alt="React, Next.js, SQLite, Linux, Arch Linux, Neovim, Git, GitHub Actions, Docker, Cloudflare" />
 
 </div>
 
