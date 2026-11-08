@@ -42,14 +42,23 @@ I work on media playback, network protocols, Linux tooling, and cross-platform a
 <td valign="top">
 <h3>spotatui &nbsp;<sub>flagship</sub></h3>
 <p>
-A terminal music player written in Rust, built on <a href="https://ratatui.rs">Ratatui</a>.
-It streams Spotify natively, with no official client and no <code>spotifyd</code> in the loop, and
-Spotify is optional: local files, Subsonic/Navidrome, internet radio, and YouTube all work on their own.
-Synced lyrics, a real-time audio visualizer, a queue that spans every source, Lua plugins, and a
-scriptable CLI. Runs on Linux, macOS, and Windows.
+A fast music player for the terminal, with a desktop app in preview, written in Rust on
+<a href="https://ratatui.rs">Ratatui</a>. Spotify streams through its own built-in client, with no
+official app, no developer key, and no <code>spotifyd</code> in the loop. Spotify is also just one of
+seven sources: local files, Subsonic/Navidrome, internet radio, YouTube, Qobuz, and Apple Music on macOS
+all work on their own.
+</p>
+<p>
+Synced lyrics, a real-time audio visualizer, a queue that mixes sources, playlist sync across services,
+Lua plugins, an AI DJ (or your coding agent as the DJ over MCP), a local listening history with a
+shareable recap, and a scriptable CLI. Runs on Linux, macOS, and Windows.
+</p>
+<p>
+<code>curl -fsSL https://spotatui.com/install.sh | bash</code> &nbsp;or&nbsp; <code>winget install spotatui</code>
 </p>
 <p>
 <a href="https://spotatui.com">spotatui.com</a> &nbsp;·&nbsp;
+<a href="https://spotatui.com/discord">Discord</a> &nbsp;·&nbsp;
 <a href="https://crates.io/crates/spotatui">crates.io</a> &nbsp;·&nbsp;
 <a href="https://github.com/LargeModGames/spotatui">source</a>
 </p>
