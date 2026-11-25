@@ -110,7 +110,7 @@ tokens), friends and presence, live chat, library and achievement data. Async, o
 <div align="center">
 
 <img height="170" src="https://github-readme-stats-zeta-eight-88.vercel.app/api?username=LargeModGames&amp;show_icons=true&amp;theme=monokai&amp;hide_border=true" alt="GitHub stats" />
-<img height="170" src="https://github-readme-stats-zeta-eight-88.vercel.app/api/top-langs/?username=LargeModGames&amp;layout=compact&amp;theme=monokai&amp;hide_border=true" alt="Top languages" />
+<img height="170" src="https://github-readme-stats-zeta-eight-88.vercel.app/api/top-langs/?username=LargeModGames&amp;orgs=mAIdribusiness,Greybeard-Game-Studios&amp;size_weight=0.5&amp;count_weight=0.5&amp;layout=compact&amp;theme=monokai&amp;hide_border=true" alt="Top languages" />
 
 ![Snake eating my contribution graph](https://github.com/LargeModGames/LargeModGames/blob/output/github-contribution-grid-snake-dark.svg?raw=1)
 
