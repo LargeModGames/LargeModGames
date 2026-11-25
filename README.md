@@ -26,7 +26,8 @@ I work on media playback, network protocols, Linux tooling, and cross-platform a
 ## What I Do
 
 - **Maintain open-source projects that people actually run.** Releases, packaging, issue triage, and the long tail of cross-platform bugs.
-- **Write Rust**, mostly. C, C++, and Python when they suit the problem better.
+- **Write Rust** for my open-source work. C, C++, and Python when they suit the problem better.
+- **Build with teams.** TypeScript and Python at [mAIdribusiness](https://github.com/mAIdribusiness), and C++ game development at [Greybeard Game Studios](https://github.com/Greybeard-Game-Studios).
 - **Build for the terminal.** Fast, keyboard-driven tools that stay out of your way.
 - **Enjoy the awkward parts.** Audio pipelines, undocumented network protocols, Linux internals, and bugs that only reproduce on someone else's machine.
 
@@ -97,7 +98,7 @@ tokens), friends and presence, live chat, library and achievement data. Async, o
 
 <img src="https://skillicons.dev/icons?i=rust" height="72" alt="Rust" />
 
-<sub>**Rust** is where most of my time goes</sub>
+<sub>**Rust** is where most of my open-source time goes</sub>
 
 <img src="https://skillicons.dev/icons?i=c,cpp,cs,ts,kotlin,lua,py,haskell,erlang,bash,powershell" height="46" alt="C, C++, C#, TypeScript, Kotlin, Lua, Python, Haskell, Erlang, Bash, PowerShell" />
 <br />
@@ -112,7 +113,10 @@ tokens), friends and presence, live chat, library and achievement data. Async, o
 <img height="170" src="https://github-readme-stats-zeta-eight-88.vercel.app/api?username=LargeModGames&amp;show_icons=true&amp;theme=monokai&amp;hide_border=true" alt="GitHub stats" />
 <img height="170" src="https://github-readme-stats-zeta-eight-88.vercel.app/api/top-langs/?username=LargeModGames&amp;orgs=mAIdribusiness,Greybeard-Game-Studios&amp;size_weight=0.5&amp;count_weight=0.5&amp;hide=makefile&amp;layout=compact&amp;theme=monokai&amp;hide_border=true" alt="Top languages" />
 
-![Snake eating my contribution graph](https://github.com/LargeModGames/LargeModGames/blob/output/github-contribution-grid-snake-dark.svg?raw=1)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/LargeModGames/LargeModGames/blob/output/github-contribution-grid-snake-dark.svg?raw=1" />
+  <img alt="Snake eating my contribution graph" src="https://github.com/LargeModGames/LargeModGames/blob/output/github-contribution-grid-snake.svg?raw=1" />
+</picture>
 
 </div>
 
