@@ -1,127 +1,26 @@
 <div align="center">
 
-![Header](https://capsule-render.vercel.app/api?type=waving&color=F7931E,FFB347,1A1A1A&height=220&section=header&text=LargeModGames&fontSize=54&fontColor=FFFFFF&animation=fadeIn&fontAlignY=35)
+<img src="https://readme-tui.spotatui.workers.dev/tui.svg" width="830" alt="LargeModGames: open-source developer and maintainer, building terminal-native software in Rust. Maintainer of spotatui. This profile is a live terminal UI rendered by ratatui on a Cloudflare Worker." />
 
-### Open-source developer and maintainer, building terminal-native software in Rust
+**Switch the tab for everyone:**
+[What I Do](https://readme-tui.spotatui.workers.dev/tab/what-i-do) ·
+[spotatui](https://readme-tui.spotatui.workers.dev/tab/spotatui) ·
+[steamie](https://readme-tui.spotatui.workers.dev/tab/steamie) ·
+[Tech I Use](https://readme-tui.spotatui.workers.dev/tab/tech)
 
-Maintainer of **[spotatui](https://github.com/LargeModGames/spotatui)**.
-I work on media playback, network protocols, Linux tooling, and cross-platform applications.
+This whole profile is a live [ratatui](https://ratatui.rs) app, rendered to SVG on a Cloudflare Worker.
+**[See how it works →](https://github.com/LargeModGames/readme-tui)**
 
-<br />
-
-[![Now playing on spotatui](https://spotatui.com/widget/largemodgames.svg)](https://spotatui.com)
-
-<sub>↑ live from **spotatui**, the terminal music player I maintain</sub>
-
-<br />
-
-[![Discord Presence](https://lanyard.cnrad.dev/api/358199352717475840?hideSpotify=true&hideActivity=true)](https://discord.com/users/358199352717475840)
-
-![Profile Views](https://komarev.com/ghpvc/?username=LargeModGames&style=for-the-badge&color=orange)
-![Followers](https://img.shields.io/github/followers/LargeModGames?style=for-the-badge&color=F7931E)
-![Stars](https://img.shields.io/github/stars/LargeModGames?style=for-the-badge&color=F7931E)
-
-</div>
-
-## What I Do
-
-- **Maintain open-source projects that people actually run.** Releases, packaging, issue triage, and the long tail of cross-platform bugs.
-- **Write Rust** for my open-source work. C, C++, and Python when they suit the problem better.
-- **Build with teams.** TypeScript and Python at [mAIdribusiness](https://github.com/mAIdribusiness), and C++ game development at [Greybeard Game Studios](https://github.com/Greybeard-Game-Studios).
-- **Build for the terminal.** Fast, keyboard-driven tools that stay out of your way.
-- **Enjoy the awkward parts.** Audio pipelines, undocumented network protocols, Linux internals, and bugs that only reproduce on someone else's machine.
-
-## Current Projects
-
-<table>
-<tr>
-<td width="420" align="center">
-<a href="https://github.com/LargeModGames/spotatui">
-<img src="https://github-readme-stats-zeta-eight-88.vercel.app/api/pin/?username=LargeModGames&amp;repo=spotatui&amp;theme=monokai&amp;hide_border=true" alt="spotatui repository card" />
-</a>
-</td>
-<td valign="top">
-<h3>spotatui &nbsp;<sub>flagship</sub></h3>
-<p>
-A fast music player for the terminal, with a desktop app in preview, written in Rust on
-<a href="https://ratatui.rs">Ratatui</a>. Spotify streams through its own built-in client, with no
-official app, no developer key, and no <code>spotifyd</code> in the loop. Spotify is also just one of
-seven sources: local files, Subsonic/Navidrome, internet radio, YouTube, Qobuz, and Apple Music on macOS
-all work on their own.
-</p>
-<p>
-Synced lyrics, a real-time audio visualizer, a queue that mixes sources, playlist sync across services,
-Lua plugins, an AI DJ (or your coding agent as the DJ over MCP), a local listening history with a
-shareable recap, and a scriptable CLI. Runs on Linux, macOS, and Windows.
-</p>
-<p>
-<code>curl -fsSL https://spotatui.com/install.sh | bash</code> &nbsp;or&nbsp; <code>winget install spotatui</code>
-</p>
-<p>
-<a href="https://spotatui.com">spotatui.com</a> &nbsp;·&nbsp;
-<a href="https://spotatui.com/discord">Discord</a> &nbsp;·&nbsp;
-<a href="https://crates.io/crates/spotatui">crates.io</a> &nbsp;·&nbsp;
-<a href="https://github.com/LargeModGames/spotatui">source</a>
-</p>
-</td>
-</tr>
-</table>
-
-<table>
-<tr>
-<td width="50%" valign="top" align="center">
-<a href="https://github.com/LargeModGames/steamie">
-<img src="https://github-readme-stats-zeta-eight-88.vercel.app/api/pin/?username=LargeModGames&amp;repo=steamie&amp;theme=monokai&amp;hide_border=true" alt="steamie repository card" />
-</a>
-<p align="left">
-A terminal-native Steam client. Sign in with a QR code, browse your library, chat with friends in
-real time, check playtime and achievements, and launch games without a Steam window in the way.
-It speaks Steam's own connection-manager protocol, so there is no Web API key and no scraping.
-</p>
-</td>
-<td width="50%" valign="top" align="center">
-<a href="https://github.com/LargeModGames/steam-cm-protocol">
-<img src="https://github-readme-stats-zeta-eight-88.vercel.app/api/pin/?username=LargeModGames&amp;repo=steam-cm-protocol&amp;theme=monokai&amp;hide_border=true" alt="steam-cm-protocol repository card" />
-</a>
-<p align="left">
-The crate underneath steamie, and usable on its own: a Rust implementation of Steam's
-connection-manager protocol over WebSocket. Authentication (QR, password, Steam Guard, refresh
-tokens), friends and presence, live chat, library and achievement data. Async, on Tokio.
-</p>
-</td>
-</tr>
-</table>
-
-## Tech I Use
-
-<div align="center">
-
-<img src="https://skillicons.dev/icons?i=rust" height="72" alt="Rust" />
-
-<sub>**Rust** is where most of my open-source time goes</sub>
-
-<img src="https://skillicons.dev/icons?i=c,cpp,cs,ts,kotlin,lua,py,haskell,erlang,bash,powershell" height="46" alt="C, C++, C#, TypeScript, Kotlin, Lua, Python, Haskell, Erlang, Bash, PowerShell" />
-<br />
-<img src="https://skillicons.dev/icons?i=react,nextjs,sqlite,linux,arch,neovim,git,githubactions,docker,cloudflare" height="46" alt="React, Next.js, SQLite, Linux, Arch Linux, Neovim, Git, GitHub Actions, Docker, Cloudflare" />
-
-</div>
-
-## GitHub
-
-<div align="center">
-
-<img height="170" src="https://github-readme-stats-zeta-eight-88.vercel.app/api?username=LargeModGames&amp;show_icons=true&amp;theme=monokai&amp;hide_border=true" alt="GitHub stats" />
-<img height="170" src="https://github-readme-stats-zeta-eight-88.vercel.app/api/top-langs/?username=LargeModGames&amp;orgs=mAIdribusiness,Greybeard-Game-Studios&amp;size_weight=0.5&amp;count_weight=0.5&amp;hide=makefile&amp;layout=compact&amp;theme=monokai&amp;hide_border=true" alt="Top languages" />
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/LargeModGames/LargeModGames/blob/output/github-contribution-grid-snake-dark.svg?raw=1" />
-  <img alt="Snake eating my contribution graph" src="https://github.com/LargeModGames/LargeModGames/blob/output/github-contribution-grid-snake.svg?raw=1" />
-</picture>
-
-</div>
-
-<div align="center">
-
-![Footer](https://capsule-render.vercel.app/api?type=waving&color=F7931E,FFB347,1A1A1A&height=120&section=footer)
+<sub>
+<a href="https://spotatui.com">spotatui.com</a> ·
+<a href="https://spotatui.com/discord">Discord</a> ·
+<a href="https://crates.io/crates/spotatui">crates.io</a> ·
+<a href="https://github.com/LargeModGames/spotatui">spotatui</a> ·
+<a href="https://github.com/LargeModGames/steamie">steamie</a> ·
+<a href="https://github.com/LargeModGames/steam-cm-protocol">steam-cm-protocol</a> ·
+<a href="https://github.com/mAIdribusiness">mAIdribusiness</a> ·
+<a href="https://github.com/Greybeard-Game-Studios">Greybeard Game Studios</a> ·
+<a href="https://discord.com/users/358199352717475840">me on Discord</a>
+</sub>
 
 </div>
